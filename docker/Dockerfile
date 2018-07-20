@@ -53,7 +53,13 @@ RUN mkdir -p /usr/share/glvnd/egl_vendor.d && \
 RUN mkdir -p /usr/local/share/glvnd/egl_vendor.d && \
     echo '{ "file_format_version" : "1.0.0", "ICD" : { "library_path" : "libEGL_nvidia.so.0" } }' > /usr/local/share/glvnd/egl_vendor.d/10_nvidia.json
 
+
+RUN mkdir -p /project
+RUN chmod 700 /project/*
+
 WORKDIR /mapd
+RUN chmod 700 /mapd/*
+
 
 EXPOSE 9091 9092
 
